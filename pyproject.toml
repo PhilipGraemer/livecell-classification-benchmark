@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "livecell-classification"
+version = "0.1.0"
+description = "Controlled benchmark comparing CNN and ViT architectures for single-cell classification on LIVECell."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "Philip Graemer", email = "philip.graemer@strath.ac.uk"},
+]
+dependencies = [
+    "torch>=2.0",
+    "torchvision>=0.15",
+    "timm>=0.9",
+    "h5py>=3.0",
+    "numpy>=1.21",
+    "Pillow>=9.0",
+    "scikit-learn>=1.0",
+    "matplotlib>=3.5",
+    "seaborn>=0.12",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.4",
+]
+
+[tool.setuptools.packages.find]
+include = ["livecell_classification*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+
+[tool.ruff]
+target-version = "py39"
+line-length = 100
