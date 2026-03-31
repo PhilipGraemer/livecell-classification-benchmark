@@ -2,9 +2,10 @@
 
 A controlled benchmark comparing CNN and Vision Transformer architectures for single-cell classification on the [LIVECell](https://sartorius-research.github.io/LIVECell/) dataset.
 
-This repository accompanies the paper:
 
-> **Pretraining Inverts the CNN–ViT Ranking for Single-Cell Classification: A Controlled Benchmark on LIVECell**
+This repository accompanies the upcoming paper:
+
+> **Pretraining and the CNN–ViT Ranking for Single-Cell Classification: A Controlled Benchmark on LIVECell**
 > Philip Graemer, Giuseppe Di Caprio
 > *Manuscript in preparation*
 
@@ -12,17 +13,17 @@ This repository accompanies the paper:
 
 | Architecture | Macro F1 (pretrained) | Note |
 |---|---|---|
-| EfficientNet-B5 | **93.53%** | Best single model |
-| 3×EVA-02 council → EN-B0 | **93.42%** | Council distillation; 21× fewer params |
-| EVA-02 → EN-B0 | 92.67% | Cross-arch distillation |
-| Swin-B | 92.30% | |
-| EVA-02 (ViT-L/14) | 92.26% | Better distillation teacher than EN-B5 |
-| EN-B5 → EN-B0 | 92.18% | Same-family distillation |
-| ViT-S/8 | 91.94% | Matches EVA-02 at ¼ parameters |
+| EfficientNet-B5 | **92.25%** | Best single model |
+| 3×EVA-02 council → EN-B0 | **92.05%** | Council distillation; 21× fewer params than teacher |
+| EVA-02 → EN-B0 | 91.01% | Cross-arch distillation |
+| Swin-B | 90.53% | |
+| EVA-02 | 90.51% | Better distillation teacher than EN-B5 |
+| EN-B5 → EN-B0 | 91.01% | Same-family distillation |
+| ViT-B/16 | 89.93% | Same-family distillation |
+| ViT-S/8 | 90.61% | Exceeds EVA-02 at ¼ parameters, also better than larger ViT-B/16 |
 
 *Selected results from eleven architectures tested pretrained and from scratch with matched conditions. Full results across all architectures in the paper.*
 
-**Previously reported CNN superiority over ViTs on this task is an artefact of unmatched pretraining.** Layer-wise learning rate decay (LLRD), widely recommended for fine-tuning ViTs, consistently hurts under this domain shift.
 
 ## Architectures
 
@@ -141,6 +142,9 @@ python scripts/train.py --model vit_small_patch8_224.dino \
 ## Data
 
 This pipeline operates on **single-cell crops** extracted from LIVECell segmentation masks, stored as per-class HDF5 files. The cropping and validation pipeline is available in [`segmentation-crop-checker`](https://github.com/PhilipGraemer/segmentation-crop-checker).
+
+Already cropped LIVECell data as H5 available at: 
+https://pureportal.strath.ac.uk/en/datasets/single-cell-crops-from-the-livecell-dataset/
 
 ## Tests
 
