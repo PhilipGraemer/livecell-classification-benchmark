@@ -19,7 +19,7 @@ This repository accompanies the upcoming paper:
 | Swin-B | 90.53% | |
 | EVA-02 | 90.51% | Better distillation teacher than EN-B5 |
 | EN-B5 → EN-B0 | 91.01% | Same-family distillation |
-| ViT-B/16 | 89.93% | Same-family distillation |
+| ViT-B/16 | 89.93% |  |
 | ViT-S/8 | 90.61% | Exceeds EVA-02 at ¼ parameters, also better than larger ViT-B/16 |
 
 *Selected results from eleven architectures tested pretrained and from scratch with matched conditions. Full results across all architectures in the paper.*
