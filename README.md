@@ -32,7 +32,7 @@ Eleven architectures spanning three families, each tested pretrained (ImageNet-1
 - **Custom baselines:** Custom CNN, ResNet2
 - **CNNs (timm):** EfficientNet-B0, EfficientNet-B5
 - **Plain ViTs:** ViT-B/16, ViT-S/8
-- **Hierarchical transformers:** Swin-B, EVA-02 (ViT-L/14)
+- **Hierarchical transformers:** Swin-B, EVA-02 (ViT-B/14)
 
 ## Installation
 
