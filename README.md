@@ -143,8 +143,7 @@ python scripts/train.py --model vit_small_patch8_224.dino \
 
 This pipeline operates on **single-cell crops** extracted from LIVECell segmentation masks, stored as per-class HDF5 files. The cropping and validation pipeline is available in [`segmentation-crop-checker`](https://github.com/PhilipGraemer/segmentation-crop-checker).
 
-Already cropped LIVECell data as H5 available at: 
-https://pureportal.strath.ac.uk/en/datasets/single-cell-crops-from-the-livecell-dataset/
+Already cropped LIVECell data pickle with image level seperation into val and train as H5 will be available at Strathclyde pureportal and kaggle shortly.
 
 ## Tests
 
